@@ -1,0 +1,15 @@
+.container{
+    display:flex;
+    flex-direction: row;
+}
+.sidebar{
+    height: calc(100vh - 4rem);
+    width: 16%;
+    /* background-color:red; */
+    border: 20px solid brown;
+}
+.visualsContainer{
+    height: calc(100vh - 4rem);
+    width: 84%;
+    /* background-color:blue; */
+}

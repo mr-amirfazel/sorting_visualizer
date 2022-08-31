@@ -1,0 +1,32 @@
+.navbar {
+    text-align: center;
+  } 
+.navbar {
+    background-color: #282c34;
+    min-height: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.nav_line{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+}
+
+.nav_line a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav_line button{
+    color: white;
+    background-color: #282c34;
+    margin:0 5px 0 5px;
+}
+  

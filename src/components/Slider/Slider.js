@@ -15,7 +15,11 @@ const theme = createTheme({
     },
   });
 
-export default function Slider() {
+export default function Slider(props) {
+
+    const changeHandler = (e, data) => {
+        props.onChange(data);
+    }
 
 
   return (
@@ -23,9 +27,10 @@ export default function Slider() {
     <MUISlider
     min={18}
     max={90}
-    defaultValue={50} 
+    defaultValue={40} 
     aria-label="Default" 
     valueLabelDisplay="auto"
+    onChange={changeHandler}
     />
    </ThemeProvider>
   );

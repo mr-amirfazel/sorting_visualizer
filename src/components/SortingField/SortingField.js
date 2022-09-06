@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
+import Bar from '../Bar/Bar';
+
 import classes from './SoringField.module.css';
 
 
@@ -35,9 +37,7 @@ const SortingField = () => {
             <div className={classes.bars}>
                 {arr.map(item => {
                     return (
-                        <div key={item} label={item} className={classes.bar} style={{ height: `${item}px`, width: `${size/10}%` }}>
-                            <p>{item}</p>
-                        </div>
+                       <Bar value={item} size={size} />
                     );
                 })}
             </div>

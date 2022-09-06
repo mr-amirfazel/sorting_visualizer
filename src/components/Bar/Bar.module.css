@@ -1,0 +1,8 @@
+.bar{
+    display: flex;
+    justify-content:flex-end;
+    text-align:center;
+    flex-direction: column;
+    background-color: red;
+    margin: auto 2px 0 auto;
+}

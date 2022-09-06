@@ -29,4 +29,7 @@
     background-color: #282c34;
     margin:0 5px 0 5px;
 }
-  
+
+.disable_link{
+    pointer-events: none;
+}

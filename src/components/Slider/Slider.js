@@ -36,6 +36,7 @@ export default function Slider(props) {
     aria-label="Default" 
     valueLabelDisplay="auto"
     onChange={changeHandler}
+    disabled={props.disabled}
     />
    </ThemeProvider>
   );

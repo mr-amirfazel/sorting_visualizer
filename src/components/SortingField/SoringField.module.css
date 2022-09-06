@@ -1,0 +1,10 @@
+.SortingField{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:80%;
+    text-align:center;
+    height:100%;
+    background-color:cyan;
+    
+}

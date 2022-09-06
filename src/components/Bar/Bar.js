@@ -14,13 +14,14 @@ const Bar = (props) => {
         </Tooltip>
       );
 
+
     return (
         <OverlayTrigger
       placement="top"
       delay={{ show: 250, hide: 400 }}
       overlay={renderTooltip}
     >
-       <div key={props.value} label={props.value} className={classes.bar} style={{ height: `${props.value}px`, width: `${props.size}%` }}>
+       <div  label={props.value} className={classes.bar} style={{ height: `${props.value }px`, width: `${props.size}%` }}>
                             
         </div>
     </OverlayTrigger>

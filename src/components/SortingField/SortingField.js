@@ -15,7 +15,7 @@ const SortingField = () => {
     const createArray = () => {
         let newArr = [];
       while (newArr.length < size) {
-        let random = Math.floor(Math.random() * (200 - 10) + 10);
+        let random = Math.floor(Math.random() * (400) + 10);
         if (newArr.indexOf(random) === -1) {
           newArr.push(random);
         }
@@ -37,7 +37,7 @@ const SortingField = () => {
             <div className={classes.bars}>
                 {arr.map(item => {
                     return (
-                       <Bar value={item} size={size} />
+                       <Bar key={item} value={item} size={size} />
                     );
                 })}
             </div>

@@ -1,4 +1,7 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+
+
 import {Slider as MUISlider} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -15,7 +18,13 @@ const theme = createTheme({
     },
   });
 
-export default function Slider() {
+export default function Slider(props) {
+
+  const size = useSelector(state => state.size);
+
+    const changeHandler = (e, data) => {
+        props.onChange(data);
+    }
 
 
   return (
@@ -23,9 +32,10 @@ export default function Slider() {
     <MUISlider
     min={18}
     max={90}
-    defaultValue={50} 
+    defaultValue={size} 
     aria-label="Default" 
     valueLabelDisplay="auto"
+    onChange={changeHandler}
     />
    </ThemeProvider>
   );

@@ -1,0 +1,22 @@
+.sidebar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.slider{
+    width: 100%;
+}
+
+.sidebar button{
+    background-color:#282c34;
+    color: #fff;
+}
+
+.sidebar button, .sidebar p {
+    font-weight: bold;
+    font-size:1.4rem;
+}

@@ -6,7 +6,7 @@
     height: calc(100vh - 4rem);
     width: 16%;
     /* background-color:red; */
-    border: 2px solid brown;
+    border-right: 2px solid brown;
     display: flex;
 }
 .visualsContainer{

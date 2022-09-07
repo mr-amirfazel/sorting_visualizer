@@ -9,6 +9,7 @@
 
 I tried to combine my froent-end knowledge and understandings of algorithms,
 and decided to create a visualizer for basic sorting algorithms using reactjs
+also had a great inspiration reading [this](https://blog.devgenius.io/lets-build-a-sorting-visualizer-using-react-part-i-91259271e9f) artice 
 
 
 feel free adjust and improve the code

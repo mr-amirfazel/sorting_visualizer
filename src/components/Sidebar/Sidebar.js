@@ -6,6 +6,7 @@ import * as sorts from '../../Sorts/sorts';
 
 import BubbleSort from '../../Sorts/BubbleSort';
 import InsertionSort from '../../Sorts/InsertionSort';
+import SelectionSort from '../../Sorts/SelectionSort';
 
 import Slider from '../Slider/Slider';
 
@@ -57,9 +58,12 @@ const Sidebar = () => {
                 case sorts.BubbleSort:
                     BubbleSort(array, arraySwaped);
                     break;
-                    
+
                 case sorts.InsertionSort:
                     InsertionSort(array, arraySwaped);
+                    break;
+                case sorts.SelectionSort:
+                    SelectionSort(array, arraySwaped);
                     break;
                }
                 

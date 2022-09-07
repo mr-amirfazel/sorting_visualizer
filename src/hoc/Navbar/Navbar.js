@@ -23,7 +23,6 @@ const Navbar = () =>{
 
             <div>
             <button disabled={isSorting? true : false} type="button" name={sorts.BubbleSort} onClick={clickHandler} className="btn">Bubble Sort</button>
-            <button disabled={isSorting? true : false} type="button" name={sorts.MergeSort} onClick={clickHandler} className="btn">Merge Sort</button>
             <button disabled={isSorting? true : false} type="button" name={sorts.InsertionSort} onClick={clickHandler} className="btn">Insertion Sort</button>
             <button disabled={isSorting? true : false} type="button" name={sorts.SelectionSort} onClick={clickHandler} className="btn">Selection Sort</button>
             </div>

@@ -54,7 +54,6 @@ const Sidebar = () => {
                 dispatch({type: types.ALTERISSORTING, isSorting: true});
                 if (sort === sorts.BubbleSort){
                     BubbleSort(array, arraySwaped);
-                    console.log(isSorted);
                 }
                 
             }

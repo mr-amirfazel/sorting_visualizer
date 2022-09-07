@@ -30,8 +30,8 @@ export default function Slider(props) {
   return (
     <ThemeProvider theme={theme}>
     <MUISlider
-    min={18}
-    max={90}
+    min={10}
+    max={100}
     defaultValue={size} 
     aria-label="Default" 
     valueLabelDisplay="auto"

@@ -14,6 +14,8 @@ const Bar = (props) => {
         </Tooltip>
       );
 
+        console.log(props.selected);
+        // const aha = props.value > 120
 
     return (
         <OverlayTrigger

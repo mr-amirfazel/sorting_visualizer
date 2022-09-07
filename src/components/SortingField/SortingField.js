@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
 import Bar from '../Bar/Bar';
+import * as types from '../../store/types';
 
 import classes from './SoringField.module.css';
 
@@ -11,6 +12,7 @@ const SortingField = () => {
     const [arr,setArr] = useState([]);
 
     const size = useSelector(state => state.size);
+    const dispatch = useDispatch();
 
     const createArray = () => {
         let newArr = [];
@@ -25,9 +27,16 @@ const SortingField = () => {
     
 
     useEffect(() => {
-        const arr = createArray();
+        let arr = createArray();
         console.log(arr);
+        arr = arr.map(item =>{
+          return({
+            value: item,
+            selected:false,
+          });
+        })
         setArr(arr);
+        dispatch({ type: types.ALTERSORTREQUIRED, setArray:setArr, array:arr });
       }, [size]);
 
 
@@ -37,7 +46,7 @@ const SortingField = () => {
             <div className={classes.bars}>
                 {arr.map(item => {
                     return (
-                       <Bar key={item} value={item} size={size} />
+                       <Bar key={item.value} value={item.value} selected={item.selected} size={size} />
                     );
                 })}
             </div>

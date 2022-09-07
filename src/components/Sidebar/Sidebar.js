@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import * as types from '../../store/types';
+import * as sorts from '../../Sorts/sorts';
+
+import BubbleSort from '../../Sorts/BubbleSort';
 
 import Slider from '../Slider/Slider';
 
@@ -14,6 +17,8 @@ const Sidebar = () => {
     const size = useSelector((state) => state.size);
     const sort = useSelector((state) => state.sort);
     const isSorting = useSelector((state) => state.isSorting);
+    const array = useSelector((state) => state.array);
+    const setArray = useSelector((state) => state.setArray);
   
 
     const changeHandler = (newSize) => {
@@ -30,6 +35,9 @@ const Sidebar = () => {
             if(sort !== undefined) 
             {
                 dispatch({type: types.ALTERISSORTING, isSorting: true});
+                if (sort === sorts.BubbleSort){
+                    BubbleSort(array, setArray);
+                }
             }
 
     }

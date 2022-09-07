@@ -6,6 +6,8 @@ const initialState = {
     size: 40,
     sort: undefined,
     isSorting: false,
+    array:undefined,
+    setArray: undefined,
 }
 const counterReducer = (state = initialState, action) => {
 
@@ -13,22 +15,38 @@ const counterReducer = (state = initialState, action) => {
     return {
       size:  action.size,
       sort: state.sort,
-      isSorting: state.isSorting
+      isSorting: state.isSorting,
+      setArray:state.setArray,
+      array: state.array
     };
   }
   if (action.type === types.ALTERSORT) {
     return {
       size:  state.size,
       sort:  action.sort,
-      isSorting: state.isSorting
+      isSorting: state.isSorting,
+      setArray:state.setArray,
+      array: state.array
     };
   }
 
   if (action.type === types.ALTERISSORTING) {
     return {
       size:  state.size,
-      sort:  state.isSorting,
-      isSorting: action.isSorting
+      sort:  state.sort,
+      isSorting: action.isSorting,
+      setArray:state.setArray,
+      array: state.array
+    };
+  }
+
+  if (action.type === types.ALTERSORTREQUIRED){
+    return {
+      size:  state.size,
+      sort:  state.sort,
+      isSorting: state.isSorting,
+      setArray: action.setArray,
+      array:action.array,
     };
   }
 

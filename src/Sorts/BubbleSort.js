@@ -1,28 +1,28 @@
+import React from 'react';
+import {useDispatch} from 'react-redux';
+
+import * as types from '../store/types';
+// const dispatch = useDispatch();
+
 const BubbleSort = (arr, setArr) => {
+    let isSorted = false;
+    
+   
+
     setTimeout(() => {
         let newArr = [...arr];
         for (let i = 0; i < arr.length - 1; i++) {
           setTimeout(() => {
             for (let j = i + 1; j < arr.length; j++) {
-              if (newArr[i].value > newArr[j].value) {
-                let temp = newArr[i].value;
-                newArr[i].value = newArr[j].value;
-                newArr[j].value = temp;
-                newArr[j].selected = true;
-                newArr[i].selected = true;
+              if (newArr[i] > newArr[j]) {
+                let temp = newArr[i];
+                newArr[i] = newArr[j];
+                newArr[j] = temp;
                 let newStep = [...newArr];
                 setTimeout(() => {
                   setArr([...newStep]);
-                  setTimeout(() => {
-                    newArr = newArr.map (item => {
-                        return ({
-                            value: item.value,
-                            selected: false,
-                        })
-                    }, 100);
-                  })
-                },  100);
-                
+                  console.log(newStep);
+                }, j * 100);
               }
               
             }

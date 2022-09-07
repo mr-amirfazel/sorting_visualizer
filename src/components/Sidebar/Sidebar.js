@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import * as types from '../../store/types';
@@ -19,11 +19,28 @@ const Sidebar = () => {
     const isSorting = useSelector((state) => state.isSorting);
     const array = useSelector((state) => state.array);
     const setArray = useSelector((state) => state.setArray);
+
+    const arraySwaped = (newArr) =>{
+        setArray(newArr);
+        dispatch({ type: types.ALTERSORTREQUIRED, array: newArr, setArray:setArray });
+    }
   
 
     const changeHandler = (newSize) => {
         dispatch({ type: types.ALTERSIZE, size: newSize });
     }
+
+    useEffect(() => {
+        if (array !== undefined) {
+            const sorted = [...array];
+            
+        if(array.join(',') === sorted.sort((a,b)=> a-b).join(',')){
+            dispatch({ type: types.ALTERISSORTING, isSorting:false})
+        }
+        }
+    }, [array])
+
+
 
     const sortHandler = () => {
             if (sort === undefined) {
@@ -36,8 +53,10 @@ const Sidebar = () => {
             {
                 dispatch({type: types.ALTERISSORTING, isSorting: true});
                 if (sort === sorts.BubbleSort){
-                    BubbleSort(array, setArray);
+                    BubbleSort(array, arraySwaped);
+                    console.log(isSorted);
                 }
+                
             }
 
     }

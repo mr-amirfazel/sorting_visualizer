@@ -29,12 +29,12 @@ const SortingField = () => {
     useEffect(() => {
         let arr = createArray();
         console.log(arr);
-        arr = arr.map(item =>{
-          return({
-            value: item,
-            selected:false,
-          });
-        })
+        // arr = arr.map(item =>{
+        //   return({
+        //     value: item,
+        //     selected:false,
+        //   });
+        // })
         setArr(arr);
         dispatch({ type: types.ALTERSORTREQUIRED, setArray:setArr, array:arr });
       }, [size]);
@@ -46,7 +46,7 @@ const SortingField = () => {
             <div className={classes.bars}>
                 {arr.map(item => {
                     return (
-                       <Bar key={item.value} value={item.value} selected={item.selected} size={size} />
+                       <Bar key={`key-${item}`} value={item}  size={size} />
                     );
                 })}
             </div>

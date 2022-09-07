@@ -14,7 +14,6 @@ const Bar = (props) => {
         </Tooltip>
       );
 
-        console.log(props.selected);
         // const aha = props.value > 120
 
     return (
@@ -23,7 +22,7 @@ const Bar = (props) => {
       delay={{ show: 250, hide: 400 }}
       overlay={renderTooltip}
     >
-       <div  label={props.value} className={classes.bar} style={{ height: `${props.value * 1.2}px`, width: `${props.size}%` }}>
+       <div  label={value} className={classes.bar} style={{ height: `${value * 1.2}px`, width: `${props.size}%` }}>
                             
         </div>
     </OverlayTrigger>

@@ -1,13 +1,11 @@
-const BubbleSort = (arr, setArr) => {
+const InsertionSort = (arr, setArr) =>{
     setTimeout(() => {
         let newArr = [...arr];
-        for (let i = 0; i < arr.length - 1; i++) {
+        for (let i = 1; i < arr.length ; i++) {
           setTimeout(() => {
-            for (let j = i + 1; j < arr.length; j++) {
-              if (newArr[i] > newArr[j]) {
-                let temp = newArr[i];
-                newArr[i] = newArr[j];
-                newArr[j] = temp;
+            for (let j = 0; j < i; j++) {
+              if (newArr[i] < newArr[j]) {
+                swap(newArr, i, j);
                 let newStep = [...newArr];
                 setTimeout(() => {
                   setArr([...newStep]);
@@ -21,4 +19,9 @@ const BubbleSort = (arr, setArr) => {
       }, 500);
 }
 
-export default BubbleSort;
+const swap = (arr, idx1, idx2) => {
+    if(idx1!==idx2) [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+    
+}
+
+export default InsertionSort;

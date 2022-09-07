@@ -5,6 +5,7 @@ import * as types from '../../store/types';
 import * as sorts from '../../Sorts/sorts';
 
 import BubbleSort from '../../Sorts/BubbleSort';
+import InsertionSort from '../../Sorts/InsertionSort';
 
 import Slider from '../Slider/Slider';
 
@@ -52,9 +53,15 @@ const Sidebar = () => {
             if(sort !== undefined) 
             {
                 dispatch({type: types.ALTERISSORTING, isSorting: true});
-                if (sort === sorts.BubbleSort){
+               switch (sort) {
+                case sorts.BubbleSort:
                     BubbleSort(array, arraySwaped);
-                }
+                    break;
+                    
+                case sorts.InsertionSort:
+                    InsertionSort(array, arraySwaped);
+                    break;
+               }
                 
             }
 

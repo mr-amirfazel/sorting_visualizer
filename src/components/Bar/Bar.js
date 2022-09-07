@@ -21,7 +21,7 @@ const Bar = (props) => {
       delay={{ show: 250, hide: 400 }}
       overlay={renderTooltip}
     >
-       <div  label={props.value} className={classes.bar} style={{ height: `${props.value }px`, width: `${props.size}%` }}>
+       <div  label={props.value} className={classes.bar} style={{ height: `${props.value * 1.2}px`, width: `${props.size}%` }}>
                             
         </div>
     </OverlayTrigger>

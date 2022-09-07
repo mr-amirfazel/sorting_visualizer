@@ -15,7 +15,7 @@ const SortingField = () => {
     const createArray = () => {
         let newArr = [];
       while (newArr.length < size) {
-        let random = Math.floor(Math.random() * (400) + 10);
+        let random = Math.floor(Math.random() * (300) + 10);
         if (newArr.indexOf(random) === -1) {
           newArr.push(random);
         }
